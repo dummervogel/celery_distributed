@@ -1,7 +1,7 @@
-# celery示例
+# Celery示例
 项目集成了django,django-celery-beat,django-celery-results。
 
-Celery使用时，django admin用于通过broker（这里采用redis）多个celery worker，这里有两个worker app1和app2。Celery worker执行完任务后，结果会回写到backend（mysql数据库）中。
+Celery使用时，admin用于通过broker（这里采用redis）多个celery worker，这里有两个worker app1和app2。Celery worker执行完任务后，结果会回写到backend（mysql数据库）中。
 注意：
 
 - 所有的celery worker需要套用django，否则celery worker的执行结果无法写入到django-celery-results指定的数据表中
@@ -32,7 +32,7 @@ celery -A celery_admin flower --persistent=True
 > 创建django工程用
 
 ```bash
-django-admin startproject demodj .
+django-admin startproject celery_admin .
 ```
 
 > 在django里创建app用
